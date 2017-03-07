@@ -173,7 +173,7 @@ class Duplicator:
 
 def main():
     if len(sys.argv) < 5:
-        sys.exit('Usage: %s <jpg1> <jpg2> <width> <height>'.format(sys.argv[0]))
+        sys.exit('Usage: {} <jpg1> <jpg2> <width> <height>'.format(sys.argv[0]))
     with open(sys.argv[1], 'rb') as file1, open(sys.argv[2], 'rb') as file2:
         w = int(sys.argv[3])
         h = int(sys.argv[4])
