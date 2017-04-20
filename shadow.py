@@ -25,10 +25,10 @@ class Crafter:
 
         duplicator.write(jmp1.to_bytes(2, 'big'))
         duplicator.write(b'\0' * 8)
-        duplicator.write(self.jpg1[2:-2])
+        duplicator.write(memoryview(self.jpg1)[2:-2])
         duplicator.write(b'\xff\xfe')
         duplicator.write(jmp2.to_bytes(2, 'big'))
-        duplicator.write(self.jpg2[2:])
+        duplicator.write(memoryview(self.jpg2)[2:])
 
         # write PDF sections and auto-compute their xref index
         footer = Footer()
